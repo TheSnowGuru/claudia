@@ -87,6 +87,8 @@ jobs:
           security list-keychain -d user -s $KEYCHAIN_PATH
       
       - name: Build native
+        env:
+          CI: true
         run: bun run tauri build
       
       - name: Upload architecture-specific artifacts
